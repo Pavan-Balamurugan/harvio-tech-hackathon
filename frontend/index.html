@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <p class="eyebrow">Harvio Tech Hackathon</p>
+            <h1>CyberShield Admin Console</h1>
+            <p class="subtitle">
+                Starter dashboard for scanning links, QR content, and document text.
+            </p>
+        </section>
+
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Threat Scan</h2>
+                <span class="badge">Prototype</span>
+            </div>
+
+            <form id="scan-form" class="scan-form">
+                <label>
+                    Input Type
+                    <select id="input-type" name="inputType">
+                        <option value="url">URL</option>
+                        <option value="qr">QR Content</option>
+                        <option value="document">Document Text</option>
+                    </select>
+                </label>
+
+                <label>
+                    Optional Filename
+                    <input id="filename" name="filename" type="text" placeholder="example.pdf">
+                </label>
+
+                <label>
+                    Content
+                    <textarea
+                        id="content"
+                        name="content"
+                        rows="8"
+                        placeholder="Paste a URL, decoded QR content, or sample document text here."
+                    ></textarea>
+                </label>
+
+                <button type="submit">Run Scan</button>
+            </form>
+        </section>
+
+        <section class="results-grid">
+            <article class="card">
+                <h3>Verdict</h3>
+                <p id="verdict" class="verdict neutral">Waiting for scan</p>
+            </article>
+
+            <article class="card">
+                <h3>Threat Score</h3>
+                <p id="score" class="score">--</p>
+            </article>
+
+            <article class="card full-width">
+                <h3>Reasons</h3>
+                <ul id="reasons" class="reasons">
+                    <li>No scan yet.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
