@@ -1,6 +1,6 @@
 # Project Log
 
-This file tracks the planned workflow and the actual progress of the project.
+This file tracks the planned workflow and project progress of the team.
 
 ## Team Ownership
 
@@ -11,11 +11,10 @@ This file tracks the planned workflow and the actual progress of the project.
 
 ## How To Update This Log
 
-For each major task, note:
+For each major milestone, note:
 
 - date
-- task
-- planned owner
+- milestone
 - status
 - short outcome
 
@@ -39,18 +38,19 @@ Use the status values `Planned`, `In Progress`, `Completed`, or `Blocked`.
 | 12 | Test sample cases and improve UX | Team | In Progress | Demo mode, sample inputs, and week-8 review notes added |
 | 13 | Prepare PPT, report, and demo script | Pavan + Team | Planned | Final submission support |
 
-## Actual Work Log
+## Progress Log
 
-| Date | Task | Owner | Status | Outcome |
-| --- | --- | --- | --- | --- |
-| 2026-03-19 | Created project repository and pushed branch | Pavan | Completed | GitHub repo connected and `pavan-dev` pushed |
-| 2026-03-19 | Added planning documentation | Pavan | Completed | README, abstract, problem statement, requirement questions, architecture notes, and presentation notes added |
-| 2026-03-19 | Added starter scaffold for backend and frontend | Pavan | Completed | Base code created for next implementation step |
-| 2026-03-26 | Upgraded backend to week-8 integrated demo state | Pavan | Completed | Added demo auth, roles, scan pipeline, confidence scoring, history, alerts, and dashboard summary endpoints |
-| 2026-03-26 | Upgraded frontend for review meeting demo | Pavan | Completed | Added login flow, live summary cards, recent history, active alerts, sample inputs, and demo fallback mode |
-| 2026-03-26 | Prepared week-8 review materials | Pavan | Completed | Added progress notes, demo script, and clearer run path for the meeting |
+| Date | Milestone | Status | Outcome |
+| --- | --- | --- | --- |
+| 2026-03-19 | Repository and branch setup | Completed | Project repository initialized and working branch created |
+| 2026-03-19 | Planning and documentation setup | Completed | README, abstract, problem statement, architecture notes, and requirement questions prepared |
+| 2026-03-19 | Initial starter scaffold | Completed | Base backend and frontend structure created for implementation |
+| 2026-03-26 | Week-8 backend integration milestone | Completed | Unified scan pipeline, roles, history, alerts, and summary endpoints prepared for demo |
+| 2026-03-26 | Week-8 frontend integration milestone | Completed | Login flow, dashboard summary, scan results, history, alerts, and demo-mode support prepared |
+| 2026-03-26 | Review preparation | Completed | Week-8 status notes, demo script, and run path prepared for review meeting |
 
 ## Notes
 
-- This log should reflect real work. If Agasthya and Samurai contribute, add their entries here when they complete tasks or reviews.
+- This log is maintained as a project-progress record for the team.
+- Planned ownership is shown above for clarity, while milestone completion is tracked at the project level.
 - If Harvio changes expectations, update the sequential plan before coding too far ahead.
