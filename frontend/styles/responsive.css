@@ -1,0 +1,18 @@
+@media (max-width: 960px) {
+    .hero,
+    .top-grid,
+    .workspace-grid,
+    .summary-grid,
+    .result-grid,
+    .session-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        display: grid;
+    }
+
+    .hero-meta {
+        justify-items: start;
+    }
+}
