@@ -1,0 +1,193 @@
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.subtitle {
+    max-width: 760px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.panel,
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.panel {
+    padding: 24px;
+}
+
+.card {
+    padding: 18px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.84rem;
+}
+
+.badge-muted {
+    background: #ece7dc;
+    color: var(--muted);
+}
+
+.message {
+    margin: 0 0 20px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: #fff8ee;
+}
+
+.message.success {
+    background: #e7f6ef;
+    color: var(--safe);
+}
+
+.message.warn {
+    background: #fff3e6;
+    color: var(--warn);
+}
+
+.credentials {
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 18px;
+    background: var(--panel-strong);
+}
+
+.credentials ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.7;
+}
+
+.session-grid dt {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.session-grid dd {
+    margin: 6px 0 0;
+    font-weight: 700;
+}
+
+button.secondary {
+    background: #eadcc3;
+    color: var(--ink);
+}
+
+button.ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+
+.stat-card h3 {
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.stat-value.warn {
+    color: var(--warn);
+}
+
+.stat-value.danger {
+    color: var(--danger);
+}
+
+.result-box {
+    padding: 14px;
+    border-radius: 16px;
+    background: var(--panel-strong);
+}
+
+.verdict {
+    margin: 0;
+    font-size: 1.45rem;
+    font-weight: 800;
+}
+
+.verdict.safe {
+    color: var(--safe);
+}
+
+.verdict.suspicious {
+    color: var(--warn);
+}
+
+.verdict.dangerous {
+    color: var(--danger);
+}
+
+.verdict.neutral,
+.score {
+    color: var(--muted);
+}
+
+.detail-block {
+    margin-top: 16px;
+}
+
+.reasons {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.list-item {
+    padding: 14px;
+    border-radius: 16px;
+    background: var(--panel-strong);
+}
+
+.list-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 8px;
+    font-size: 0.96rem;
+}
+
+.list-item p,
+.list-item small {
+    margin-bottom: 0;
+}
+
+.empty-state {
+    color: var(--muted);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

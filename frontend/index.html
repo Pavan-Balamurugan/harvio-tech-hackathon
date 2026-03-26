@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Dashboard</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <main class="page">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Harvio Tech Hackathon</p>
+                <h1>CyberShield Admin Console</h1>
+                <p class="subtitle">
+                    Week-8 demo build for unified URL, QR, and document threat detection with
+                    role-aware access, alerting, and scan history.
+                </p>
+            </div>
+
+            <div class="hero-meta">
+                <span id="mode-chip" class="badge badge-muted">Mode: Disconnected</span>
+                <span id="auth-chip" class="badge badge-muted">Session: Not signed in</span>
+            </div>
+        </header>
+
+        <p id="message-bar" class="message info">
+            Sign in with a demo user or continue in demo mode to explore the workflow.
+        </p>
+
+        <section class="top-grid">
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Sign In</h2>
+                    <span class="badge">Week 8</span>
+                </div>
+
+                <form id="login-form" class="login-form">
+                    <label>
+                        Username
+                        <input id="username" type="text" value="admin" placeholder="admin">
+                    </label>
+
+                    <label>
+                        Password
+                        <input id="password" type="password" value="admin123" placeholder="admin123">
+                    </label>
+
+                    <div class="button-row">
+                        <button type="submit">Login to API</button>
+                        <button id="demo-login" type="button" class="secondary">
+                            Use Demo Mode
+                        </button>
+                    </div>
+                </form>
+
+                <div class="credentials">
+                    <h3>Demo Accounts</h3>
+                    <ul>
+                        <li><strong>admin</strong> / <code>admin123</code> - full access</li>
+                        <li><strong>analyst</strong> / <code>analyst123</code> - scan and review</li>
+                        <li><strong>viewer</strong> / <code>viewer123</code> - read-only dashboard</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Current Session</h2>
+                    <span id="role-chip" class="badge badge-muted">Role: None</span>
+                </div>
+
+                <dl class="session-grid">
+                    <div>
+                        <dt>User</dt>
+                        <dd id="session-user">Not signed in</dd>
+                    </div>
+                    <div>
+                        <dt>Role</dt>
+                        <dd id="session-role">-</dd>
+                    </div>
+                    <div>
+                        <dt>Access</dt>
+                        <dd id="session-access">No active session</dd>
+                    </div>
+                    <div>
+                        <dt>Stage</dt>
+                        <dd>Integration and demo readiness</dd>
+                    </div>
+                </dl>
+
+                <div class="button-row">
+                    <button id="refresh-dashboard" type="button" class="secondary">Refresh Data</button>
+                    <button id="logout-button" type="button" class="ghost">Logout</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="summary-grid">
+            <article class="card stat-card">
+                <h3>Total Scans</h3>
+                <p id="stat-scans" class="stat-value">0</p>
+            </article>
+            <article class="card stat-card">
+                <h3>Total Alerts</h3>
+                <p id="stat-alerts" class="stat-value">0</p>
+            </article>
+            <article class="card stat-card">
+                <h3>High Risk</h3>
+                <p id="stat-dangerous" class="stat-value danger">0</p>
+            </article>
+            <article class="card stat-card">
+                <h3>Suspicious</h3>
+                <p id="stat-suspicious" class="stat-value warn">0</p>
+            </article>
+        </section>
+
+        <section class="workspace-grid">
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Threat Scan</h2>
+                    <span class="badge">Unified Pipeline</span>
+                </div>
+
+                <div class="sample-row">
+                    <button class="secondary sample-button" type="button" data-sample="url">
+                        Sample URL
+                    </button>
+                    <button class="secondary sample-button" type="button" data-sample="qr">
+                        Sample QR
+                    </button>
+                    <button class="secondary sample-button" type="button" data-sample="document">
+                        Sample Document
+                    </button>
+                </div>
+
+                <form id="scan-form" class="scan-form">
+                    <label>
+                        Input Type
+                        <select id="input-type" name="inputType">
+                            <option value="url">URL</option>
+                            <option value="qr">QR Content</option>
+                            <option value="document">Document Text</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Optional Filename
+                        <input id="filename" name="filename" type="text" placeholder="example.pdf">
+                    </label>
+
+                    <label>
+                        Content
+                        <textarea
+                            id="content"
+                            name="content"
+                            rows="10"
+                            placeholder="Paste a URL, decoded QR content, or sample document text here."
+                        ></textarea>
+                    </label>
+
+                    <button type="submit">Run Scan</button>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Latest Result</h2>
+                    <span id="result-risk" class="badge badge-muted">Risk: -</span>
+                </div>
+
+                <div class="result-grid">
+                    <div class="result-box">
+                        <h3>Verdict</h3>
+                        <p id="verdict" class="verdict neutral">Waiting for scan</p>
+                    </div>
+                    <div class="result-box">
+                        <h3>Score</h3>
+                        <p id="score" class="score">--</p>
+                    </div>
+                    <div class="result-box">
+                        <h3>Confidence</h3>
+                        <p id="confidence" class="score">--</p>
+                    </div>
+                    <div class="result-box">
+                        <h3>Alert</h3>
+                        <p id="alert-status" class="score">Not triggered</p>
+                    </div>
+                </div>
+
+                <div class="detail-block">
+                    <h3>Summary</h3>
+                    <p id="summary-text">No scan completed yet.</p>
+                </div>
+
+                <div class="detail-block">
+                    <h3>Alert Channels</h3>
+                    <p id="channels-text">Dashboard only after alert generation.</p>
+                </div>
+
+                <div class="detail-block">
+                    <h3>Reasons</h3>
+                    <ul id="reasons" class="reasons">
+                        <li>No scan yet.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="workspace-grid">
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Recent Scan History</h2>
+                    <span class="badge badge-muted">Latest 10</span>
+                </div>
+                <div id="history-list" class="list-stack empty-state">
+                    No scan history yet.
+                </div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Active Alerts</h2>
+                    <span class="badge badge-muted">Latest 10</span>
+                </div>
+                <div id="alerts-list" class="list-stack empty-state">
+                    No alerts yet.
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
