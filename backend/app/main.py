@@ -6,8 +6,8 @@ from app.routes.scan import router as scan_router
 
 app = FastAPI(
     title="CyberShield API",
-    description="Starter API for multi-format cyber threat detection.",
-    version="0.1.0",
+    description="Demo-ready API for multi-format cyber threat detection.",
+    version="0.3.0",
 )
 
 app.add_middleware(
@@ -23,4 +23,4 @@ app.include_router(scan_router, prefix="/api")
 
 @app.get("/health")
 def health_check() -> dict[str, str]:
-    return {"status": "ok", "service": "cybershield-api"}
+    return {"status": "ok", "service": "cybershield-api", "stage": "week-8-demo"}
